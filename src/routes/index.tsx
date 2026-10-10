@@ -102,7 +102,7 @@ function Chat({ onComplete, onFail }: { onComplete: (p: Profile) => void; onFail
     } finally { setBusy(false); }
   }
 
-  const last = msgs[msgs.length - 1];
+  const last = msgs[msgs.length - 1]!;
   return (
     <div className="flex flex-1 flex-col">
       <div className="flex-1 space-y-4">

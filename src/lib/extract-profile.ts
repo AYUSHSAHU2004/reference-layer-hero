@@ -28,13 +28,13 @@ function guess(t: string, goal: string): Profile {
   let horizon = 12;
   const y = t.match(/(\d+)\s*\+?\s*year/);
   const m = t.match(/(\d+)\s*month/);
-  if (y) horizon = Number(y[1]) * 12;
-  else if (m) horizon = Number(m[1]);
+  if (y) horizon = Number(y[1] ?? 1) * 12;
+  else if (m) horizon = Number(m[1] ?? 12);
   const amt = t.match(/₹?\s?([\d,]{3,})/);
   return {
-    goal: goal.split(",")[0].trim() || "Saving",
+    goal: (goal.split(",")[0] ?? "").trim() || "Saving",
     horizon_months: horizon,
-    monthly_amount: amt ? Number(amt[1].replace(/,/g, "")) : 2000,
+    monthly_amount: amt ? Number((amt[1] ?? "2000").replace(/,/g, "")) : 2000,
     income_type: /freelance|irregular|gig/.test(t) ? "irregular" : "regular",
     emergency_fund: /emergency/.test(t) ? "no" : "yes",
     risk_feeling: /nervous|scared|worried/.test(t) ? "nervous" : /calm/.test(t) ? "calm" : "okay",
