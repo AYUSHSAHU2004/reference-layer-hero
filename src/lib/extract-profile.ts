@@ -21,7 +21,7 @@ export async function extractProfile(history: ChatMessage[]): Promise<ExtractRes
   const answers = history.filter((m) => m.role === "user").map((m) => m.content);
   if (answers.some((a) => a.toLowerCase().includes("fail"))) throw new Error("stub failure");
   if (answers.length < 2) return { status: "needs_more", ...SECOND };
-  return { status: "complete", profile: guess(answers.join(" ").toLowerCase(), answers[0]) };
+  return { status: "complete", profile: guess(answers.join(" ").toLowerCase(), answers[0] ?? "") };
 }
 
 function guess(t: string, goal: string): Profile {
