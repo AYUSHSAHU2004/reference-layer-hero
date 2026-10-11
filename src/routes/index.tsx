@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import fundsData from "@/data/funds.json";
 import { filterFunds, whyItFits, type Fund, type Profile } from "@/lib/filter";
+import { AskType, categoryIdFor, type AskMsg } from "@/components/AskType";
 import { extractProfile, FIRST_QUESTION, type ChatMessage } from "@/lib/extract-profile";
 
 export const Route = createFileRoute("/")({
@@ -28,6 +29,8 @@ function App() {
   const [screen, setScreen] = useState<Screen>("welcome");
   const [profile, setProfile] = useState<Profile>(DEFAULT);
   const [fund, setFund] = useState<Fund | null>(null);
+  const [convos, setConvos] = useState<Record<string, AskMsg[]>>({});
+  const ask = { convos, set: (id: string, m: AskMsg[]) => setConvos((c) => ({ ...c, [id]: m })) };
 
   return (
     <div className="mx-auto flex min-h-screen max-w-md flex-col px-5">
@@ -46,9 +49,9 @@ function App() {
           <ProfileForm title="Here's what I understood" note="Change anything that's not right, then confirm." initial={profile} cta="Looks right" onSubmit={(p) => { setProfile(p); setScreen("results"); }} />
         )}
         {screen === "results" && (
-          <Results profile={profile} onOpen={(f) => { setFund(f); setScreen("detail"); }} onEdit={() => setScreen("confirm")} />
+          <Results ask={ask} profile={profile} onOpen={(f) => { setFund(f); setScreen("detail"); }} onEdit={() => setScreen("confirm")} />
         )}
-        {screen === "detail" && fund && <Detail fund={fund} profile={profile} onBack={() => setScreen("results")} />}
+        {screen === "detail" && fund && <Detail ask={ask} fund={fund} profile={profile} onBack={() => setScreen("results")} />}
       </main>
       <footer className="border-t py-4 text-center text-xs text-muted-foreground">Educational demo. Not investment advice.</footer>
     </div>
@@ -162,8 +165,13 @@ function ProfileForm({ title, note, initial, cta, onSubmit }: { title: string; n
   );
 }
 
-function Results({ profile, onOpen, onEdit }: { profile: Profile; onOpen: (f: Fund) => void; onEdit: () => void }) {
+type AskState = { convos: Record<string, AskMsg[]>; set: (id: string, m: AskMsg[]) => void };
+
+function Results({ ask, profile, onOpen, onEdit }: { ask: AskState; profile: Profile; onOpen: (f: Fund) => void; onEdit: () => void }) {
   const r = filterFunds(funds, profile);
+  const types = [...new Set(r.matches.map((f) => f.type))];
+  const [pick, setPick] = useState(types[0] ?? "");
+  const pid = categoryIdFor(pick);
   return (
     <div className="fade-up space-y-4">
       <div className="space-y-1"><h1 className="text-2xl">Types that fit you</h1><p className="text-sm text-muted-foreground">Based on: {profile.goal}, in {profile.horizon_months} months, ₹{profile.monthly_amount.toLocaleString("en-IN")}/month.</p></div>
@@ -187,6 +195,12 @@ function Results({ profile, onOpen, onEdit }: { profile: Profile; onOpen: (f: Fu
           <ul className="mt-3 space-y-2 text-sm text-muted-foreground">{r.hidden.map((h) => <li key={h.type}>{h.reason}</li>)}</ul>
         </details>
       )}
+      {types.length > 0 && (
+        <div className="space-y-2">
+          <div className="flex flex-wrap gap-2">{types.map((t) => <button key={t} type="button" onClick={() => setPick(t)} className={`rounded-full border px-3 py-1.5 text-xs ${t === pick ? "border-primary bg-secondary font-semibold" : "bg-card"}`}>{t}</button>)}</div>
+          {pid && <AskType key={pid} categoryId={pid} msgs={ask.convos[pid] ?? []} setMsgs={(m) => ask.set(pid, m)} />}
+        </div>
+      )}
       <Btn variant="ghost" onClick={onEdit}>Change my answers</Btn>
     </div>
   );
@@ -209,7 +223,7 @@ function Term({ t }: { t: keyof typeof JARGON | string }) {
   );
 }
 
-function Detail({ fund: f, profile, onBack }: { fund: Fund; profile: Profile; onBack: () => void }) {
+function Detail({ ask, fund: f, profile, onBack }: { ask: AskState; fund: Fund; profile: Profile; onBack: () => void }) {
   const months = (m: number) => (m === 0 ? "None" : m >= 12 && m % 12 === 0 ? `${m / 12} yr` : `${m} months`);
   const risky = f.risk === "high" || f.risk === "medium-high";
   return (
@@ -238,6 +252,7 @@ function Detail({ fund: f, profile, onBack }: { fund: Fund; profile: Profile; on
           <li>Costs are taken every year, whether the fund goes up or down.</li>
         </ul>
       </section>
+      {categoryIdFor(f.type) && <AskType categoryId={categoryIdFor(f.type)} msgs={ask.convos[categoryIdFor(f.type)] ?? []} setMsgs={(m) => ask.set(categoryIdFor(f.type), m)} />}
     </div>
   );
 }
