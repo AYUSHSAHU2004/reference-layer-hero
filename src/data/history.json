@@ -1,0 +1,353 @@
+{
+ "_note": "illustrative, simplified, mock demo data",
+ "types": [
+  "Liquid / short-term debt",
+  "Hybrid",
+  "Index fund",
+  "Flexi-cap equity",
+  "ELSS",
+  "Gold fund",
+  "Direct stocks (broad market)",
+  "Fixed deposit"
+ ],
+ "phases": [
+  {
+   "id": "gfc",
+   "name": "Global financial crisis",
+   "period": "2008-09",
+   "description": "A worldwide banking scare led to a deep, long fall in share prices.",
+   "signature": {
+    "market_vs_peak": -55,
+    "change_3m": -25,
+    "change_12m": -50,
+    "volatility": "high",
+    "rate_level": "medium",
+    "rate_trend_6m": "falling"
+   }
+  },
+  {
+   "id": "rupee",
+   "name": "Rupee and rate stress",
+   "period": "2013",
+   "description": "The rupee weakened sharply and interest rates were pushed up to calm things.",
+   "signature": {
+    "market_vs_peak": -12,
+    "change_3m": -9,
+    "change_12m": 3,
+    "volatility": "high",
+    "rate_level": "high",
+    "rate_trend_6m": "rising"
+   }
+  },
+  {
+   "id": "bull",
+   "name": "Steady bull run",
+   "period": "2014-17",
+   "description": "Share prices rose slowly and steadily with few big shocks.",
+   "signature": {
+    "market_vs_peak": 0,
+    "change_3m": 5,
+    "change_12m": 20,
+    "volatility": "low",
+    "rate_level": "medium",
+    "rate_trend_6m": "falling"
+   }
+  },
+  {
+   "id": "covid",
+   "name": "COVID crash",
+   "period": "2020",
+   "description": "Lockdowns caused a very fast, very deep fall in a few weeks.",
+   "signature": {
+    "market_vs_peak": -38,
+    "change_3m": -30,
+    "change_12m": -25,
+    "volatility": "high",
+    "rate_level": "low",
+    "rate_trend_6m": "falling"
+   }
+  },
+  {
+   "id": "rally",
+   "name": "Post-COVID rally",
+   "period": "2020-21",
+   "description": "Share prices bounced back quickly as economies reopened and rates stayed low.",
+   "signature": {
+    "market_vs_peak": -2,
+    "change_3m": 25,
+    "change_12m": 60,
+    "volatility": "medium",
+    "rate_level": "low",
+    "rate_trend_6m": "stable"
+   }
+  },
+  {
+   "id": "hike",
+   "name": "Rate-hike volatility",
+   "period": "2022",
+   "description": "Rising interest rates around the world made prices swing up and down.",
+   "signature": {
+    "market_vs_peak": -15,
+    "change_3m": -5,
+    "change_12m": 3,
+    "volatility": "high",
+    "rate_level": "medium",
+    "rate_trend_6m": "rising"
+   }
+  }
+ ],
+ "results": {
+  "gfc": {
+   "Liquid / short-term debt": {
+    "behaviour": "stayed steady with small gains",
+    "illustrative_move": "about +7%",
+    "why": "Short loans kept paying interest while rates were cut."
+   },
+   "Hybrid": {
+    "behaviour": "fell, then recovered over about 1 year",
+    "illustrative_move": "about -25%",
+    "why": "The share part fell hard but the loan part cushioned it."
+   },
+   "Index fund": {
+    "behaviour": "fell sharply, then recovered over about 2 years",
+    "illustrative_move": "about -50%",
+    "why": "It follows the market, which fell deeply."
+   },
+   "Flexi-cap equity": {
+    "behaviour": "fell sharply, then recovered over about 2 years",
+    "illustrative_move": "about -50%",
+    "why": "Company shares of all sizes fell as fear spread."
+   },
+   "ELSS": {
+    "behaviour": "fell sharply, then recovered over about 2 years",
+    "illustrative_move": "about -50%",
+    "why": "It holds company shares, which fell deeply."
+   },
+   "Gold fund": {
+    "behaviour": "held steady and rose",
+    "illustrative_move": "about +20%",
+    "why": "People moved to gold when they were afraid."
+   },
+   "Direct stocks (broad market)": {
+    "behaviour": "fell sharply, some took many years to recover",
+    "illustrative_move": "about -55%",
+    "why": "Share prices fell across the market."
+   },
+   "Fixed deposit": {
+    "behaviour": "stayed stable",
+    "illustrative_move": "about +8%",
+    "why": "The bank pays the agreed interest regardless of markets."
+   }
+  },
+  "rupee": {
+   "Liquid / short-term debt": {
+    "behaviour": "dipped briefly, then steadied within months",
+    "illustrative_move": "about -1%",
+    "why": "A sudden jump in rates lowered the value of existing loans for a while."
+   },
+   "Hybrid": {
+    "behaviour": "dipped, then recovered within about a year",
+    "illustrative_move": "about -6%",
+    "why": "Both shares and loans were hit by higher rates."
+   },
+   "Index fund": {
+    "behaviour": "fell, then recovered within about a year",
+    "illustrative_move": "about -10%",
+    "why": "Shares fell as money left the country."
+   },
+   "Flexi-cap equity": {
+    "behaviour": "fell, then recovered within about a year",
+    "illustrative_move": "about -12%",
+    "why": "Smaller companies fell more as fear rose."
+   },
+   "ELSS": {
+    "behaviour": "fell, then recovered within about a year",
+    "illustrative_move": "about -12%",
+    "why": "It holds company shares hit by the stress."
+   },
+   "Gold fund": {
+    "behaviour": "rose in rupee terms",
+    "illustrative_move": "about +10%",
+    "why": "A weaker rupee made gold costlier in India."
+   },
+   "Direct stocks (broad market)": {
+    "behaviour": "fell, then recovered within about a year",
+    "illustrative_move": "about -12%",
+    "why": "Share prices dropped across the market."
+   },
+   "Fixed deposit": {
+    "behaviour": "stayed stable",
+    "illustrative_move": "about +9%",
+    "why": "Interest is fixed at the start, and new deposits paid more."
+   }
+  },
+  "bull": {
+   "Liquid / short-term debt": {
+    "behaviour": "grew slowly and steadily",
+    "illustrative_move": "about +7% a year",
+    "why": "Steady interest with little movement."
+   },
+   "Hybrid": {
+    "behaviour": "grew steadily with mild swings",
+    "illustrative_move": "about +10% a year",
+    "why": "Shares rose while loans stayed calm."
+   },
+   "Index fund": {
+    "behaviour": "rose steadily with small dips",
+    "illustrative_move": "about +12% a year",
+    "why": "It followed a market that was rising calmly."
+   },
+   "Flexi-cap equity": {
+    "behaviour": "rose with small dips",
+    "illustrative_move": "about +14% a year",
+    "why": "Many companies grew in a calm market."
+   },
+   "ELSS": {
+    "behaviour": "rose with small dips",
+    "illustrative_move": "about +14% a year",
+    "why": "It holds company shares in a rising market."
+   },
+   "Gold fund": {
+    "behaviour": "stayed mostly flat",
+    "illustrative_move": "about +2% a year",
+    "why": "With little fear, fewer people bought gold."
+   },
+   "Direct stocks (broad market)": {
+    "behaviour": "rose, though single shares varied a lot",
+    "illustrative_move": "about +12% a year",
+    "why": "A calm, growing market lifted many shares."
+   },
+   "Fixed deposit": {
+    "behaviour": "stayed stable",
+    "illustrative_move": "about +7% a year",
+    "why": "Fixed interest, no link to markets."
+   }
+  },
+  "covid": {
+   "Liquid / short-term debt": {
+    "behaviour": "dipped very slightly, then steadied in weeks",
+    "illustrative_move": "about -1%",
+    "why": "A short scramble for cash, then rate cuts helped."
+   },
+   "Hybrid": {
+    "behaviour": "fell, then recovered within about 6 months",
+    "illustrative_move": "about -18%",
+    "why": "The share part fell fast, the loan part softened it."
+   },
+   "Index fund": {
+    "behaviour": "fell sharply, then recovered within about 8 months",
+    "illustrative_move": "about -38%",
+    "why": "The whole market fell very fast."
+   },
+   "Flexi-cap equity": {
+    "behaviour": "fell sharply, then recovered within about 8 months",
+    "illustrative_move": "about -38%",
+    "why": "Companies of all sizes fell together."
+   },
+   "ELSS": {
+    "behaviour": "fell sharply, then recovered within about 8 months",
+    "illustrative_move": "about -38%",
+    "why": "It holds company shares, which fell fast."
+   },
+   "Gold fund": {
+    "behaviour": "held steady and rose",
+    "illustrative_move": "about +25%",
+    "why": "People turned to gold in a time of fear."
+   },
+   "Direct stocks (broad market)": {
+    "behaviour": "fell sharply; recovery varied widely by company",
+    "illustrative_move": "about -40%",
+    "why": "Lockdowns hit many businesses at once."
+   },
+   "Fixed deposit": {
+    "behaviour": "stayed stable",
+    "illustrative_move": "about +6%",
+    "why": "The bank pays the agreed interest."
+   }
+  },
+  "rally": {
+   "Liquid / short-term debt": {
+    "behaviour": "grew slowly",
+    "illustrative_move": "about +3%",
+    "why": "Very low rates meant small interest."
+   },
+   "Hybrid": {
+    "behaviour": "rose steadily",
+    "illustrative_move": "about +25%",
+    "why": "The share part rose strongly."
+   },
+   "Index fund": {
+    "behaviour": "rose strongly",
+    "illustrative_move": "about +55%",
+    "why": "The market bounced back quickly."
+   },
+   "Flexi-cap equity": {
+    "behaviour": "rose strongly",
+    "illustrative_move": "about +60%",
+    "why": "Companies of many sizes recovered quickly."
+   },
+   "ELSS": {
+    "behaviour": "rose strongly",
+    "illustrative_move": "about +60%",
+    "why": "It holds company shares that bounced back."
+   },
+   "Gold fund": {
+    "behaviour": "dipped after rising earlier",
+    "illustrative_move": "about -5%",
+    "why": "As fear faded, less money went into gold."
+   },
+   "Direct stocks (broad market)": {
+    "behaviour": "rose strongly, though unevenly",
+    "illustrative_move": "about +60%",
+    "why": "Reopening economies lifted many shares."
+   },
+   "Fixed deposit": {
+    "behaviour": "stayed stable",
+    "illustrative_move": "about +5%",
+    "why": "Fixed interest, now at lower rates."
+   }
+  },
+  "hike": {
+   "Liquid / short-term debt": {
+    "behaviour": "stayed steady with small gains",
+    "illustrative_move": "about +4%",
+    "why": "New short loans paid more as rates rose."
+   },
+   "Hybrid": {
+    "behaviour": "swung up and down, ended roughly flat",
+    "illustrative_move": "about 0%",
+    "why": "Shares wobbled and loan values dipped as rates rose."
+   },
+   "Index fund": {
+    "behaviour": "swung up and down, ended roughly flat",
+    "illustrative_move": "about +3%",
+    "why": "Rising rates made share prices jumpy."
+   },
+   "Flexi-cap equity": {
+    "behaviour": "swung up and down, ended slightly lower",
+    "illustrative_move": "about -2%",
+    "why": "Higher rates weighed on company values."
+   },
+   "ELSS": {
+    "behaviour": "swung up and down, ended slightly lower",
+    "illustrative_move": "about -2%",
+    "why": "It holds company shares that wobbled."
+   },
+   "Gold fund": {
+    "behaviour": "rose modestly",
+    "illustrative_move": "about +12%",
+    "why": "Worry and a weaker rupee supported gold."
+   },
+   "Direct stocks (broad market)": {
+    "behaviour": "swung a lot, ended roughly flat",
+    "illustrative_move": "about +3%",
+    "why": "Uncertainty about rates moved prices both ways."
+   },
+   "Fixed deposit": {
+    "behaviour": "stayed stable",
+    "illustrative_move": "about +6%",
+    "why": "Fixed interest, and new deposits paid more."
+   }
+  }
+ }
+}

@@ -1,0 +1,66 @@
+{
+ "_label": "Demo snapshot, not live market data",
+ "default": "default",
+ "scenarios": [
+  {
+   "id": "default",
+   "name": "Demo today",
+   "values": {
+    "market_vs_peak": -12,
+    "change_3m": -8,
+    "change_12m": 4,
+    "volatility": "high",
+    "rate_level": "medium",
+    "rate_trend_6m": "stable"
+   }
+  },
+  {
+   "id": "fall",
+   "name": "Sharp fall",
+   "values": {
+    "market_vs_peak": -35,
+    "change_3m": -25,
+    "change_12m": -20,
+    "volatility": "high",
+    "rate_level": "low",
+    "rate_trend_6m": "falling"
+   }
+  },
+  {
+   "id": "slow",
+   "name": "Slow recovery",
+   "values": {
+    "market_vs_peak": -10,
+    "change_3m": 6,
+    "change_12m": -5,
+    "volatility": "medium",
+    "rate_level": "medium",
+    "rate_trend_6m": "stable"
+   }
+  },
+  {
+   "id": "rally",
+   "name": "Strong rally",
+   "values": {
+    "market_vs_peak": -1,
+    "change_3m": 20,
+    "change_12m": 50,
+    "volatility": "medium",
+    "rate_level": "low",
+    "rate_trend_6m": "stable"
+   }
+  },
+  {
+   "id": "calm",
+   "name": "Sideways and calm",
+   "values": {
+    "market_vs_peak": -3,
+    "change_3m": 1,
+    "change_12m": 8,
+    "volatility": "low",
+    "rate_level": "medium",
+    "rate_trend_6m": "stable"
+   }
+  }
+ ]
+}
