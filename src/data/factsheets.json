@@ -1,0 +1,59 @@
+{
+  "_note": "mock demo data — illustrative values only, not real fund data, no past returns",
+  "types": [
+    {"id":"liquid","name":"Liquid / short-term debt","facts":[
+      "Suits people parking money they may need within weeks or months, like an emergency cushion.",
+      "Minimum time to stay invested in this demo: about 1 month; short-term debt versions suit 6 months or more.",
+      "No lock-in.",
+      "Exit charge: none for liquid funds in this demo; up to 0.25% for short-term debt if you leave within a year.",
+      "Yearly costs are low, around 0.2-0.35% of your money in this demo.",
+      "Risk is low. In a bad period, a fund like this could dip 1-2% in the demo scenario and usually recover within weeks to a few months.",
+      "Tax basics: gains are added to your income and taxed at your slab rate. Check current rules before investing.",
+      "You can withdraw anytime, and money usually reaches your bank in 1 working day. Past behaviour does not predict the future."]},
+    {"id":"hybrid","name":"Hybrid","facts":[
+      "Suits people who want a middle path between safer loans and company shares for 1-3 years or more.",
+      "Minimum time to stay invested in this demo: 1-2 years depending on the mix.",
+      "No lock-in.",
+      "Exit charge: 0.5-1% if you leave within a year in this demo.",
+      "Yearly costs are moderate, around 0.55-0.7% of your money in this demo.",
+      "Risk is low to medium. In a severe crash, a fund like this could fall 15-25% in the demo scenario, and recovery could take about a year.",
+      "Tax basics: depends on how much is in shares; share-heavy funds are taxed like equity. Check current rules.",
+      "You can withdraw anytime, and money usually reaches your bank in 2-3 working days. Past behaviour does not predict the future."]},
+    {"id":"index","name":"Index fund","facts":[
+      "Suits people who can stay invested for 5 years or more.",
+      "It follows a market index, so it rises and falls with the market.",
+      "In a severe crash, a fund like this could fall 30-40% in the demo scenario, and recovery could take a couple of years.",
+      "No lock-in. Exit charge: none to 0.5% in this demo.",
+      "Costs are low compared with actively managed funds, around 0.15-0.3% a year in this demo.",
+      "Tax basics: taxed like equity; gains after 1 year are taxed at a lower rate than short-term gains. Check current rules.",
+      "You can withdraw anytime, and the money usually reaches your bank in 1-3 working days. Not suited to money you need within 3 years.",
+      "Past behaviour does not predict the future."]},
+    {"id":"flexi","name":"Flexi-cap equity","facts":[
+      "Suits patient people who can stay invested for 5 years or more and handle big swings.",
+      "A manager picks shares of small, mid and large companies.",
+      "In a severe crash, a fund like this could fall 35-45% in the demo scenario, and recovery could take 2-3 years.",
+      "No lock-in. Exit charge: 1% if you leave within a year in this demo.",
+      "Costs are higher than index funds, around 0.8-1% a year in this demo, because people choose the shares.",
+      "Tax basics: taxed like equity; holding over 1 year is taxed at a lower rate. Check current rules.",
+      "You can withdraw anytime, and money usually reaches your bank in 1-3 working days. Not for money needed within 5 years.",
+      "Past behaviour does not predict the future."]},
+    {"id":"elss","name":"ELSS","facts":[
+      "Suits people who want to lower income tax under the old tax rules and can wait at least 3 years.",
+      "Lock-in: 3 years. Each monthly instalment is locked for its own 3 years.",
+      "You cannot withdraw during the lock-in, even in an emergency.",
+      "Exit charge: none after the lock-in in this demo.",
+      "Costs are around 0.7-0.9% a year in this demo.",
+      "Risk is high. In a severe crash, a fund like this could fall 35-45% in the demo scenario, and recovery could take 2-3 years.",
+      "Tax basics: investment may be deductible under old rules; gains are taxed like equity. Check current rules.",
+      "After the lock-in, money usually reaches your bank in 1-3 working days. Past behaviour does not predict the future."]},
+    {"id":"gold","name":"Gold fund","facts":[
+      "Suits people who want some gold in their savings without storing physical gold, for 3 years or more.",
+      "Its price follows gold, which depends on world markets and the rupee.",
+      "In a bad period, a fund like this could fall 15-20% in the demo scenario and stay flat for several years.",
+      "No lock-in. Exit charge: 0.5-1% if you leave within a year in this demo.",
+      "Costs are around 0.4-0.55% a year in this demo.",
+      "Risk is medium. Gold often moves differently from shares.",
+      "Tax basics: gains are taxed under rules for non-equity funds. Check current rules.",
+      "You can withdraw anytime, and money usually reaches your bank in 2-3 working days. Past behaviour does not predict the future."]}
+  ]
+}
